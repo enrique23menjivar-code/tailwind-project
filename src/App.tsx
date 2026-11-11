@@ -10,15 +10,15 @@ function App() {
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <div className="text-xl font-bold">Tailwind Project</div>
           <div className="flex gap-4 text-sm md:text-base">
-            <a href="#app" className="hover:text-sky-300">App</a>
-            <a href="#flex" className="hover:text-sky-300">Flex</a>
-            <a href="#grid" className="hover:text-sky-300">Grid</a>
+            <a href="#/app" className="hover:text-sky-300">App</a>
+            <a href="#/flex" className="hover:text-sky-300">Flex</a>
+            <a href="#/grid" className="hover:text-sky-300">Grid</a>
           </div>
         </nav>
       </header>
 
       <main className="mx-auto max-w-5xl space-y-8 px-6 py-8">
-        <section id="app" className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+        <section className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
             App
           </p>
@@ -37,14 +37,14 @@ function App() {
           </div>
         </section>
 
-        <section id="flex" className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
             Flex
           </p>
           <Flex />
         </section>
 
-        <section id="grid" className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
             Grid
           </p>
