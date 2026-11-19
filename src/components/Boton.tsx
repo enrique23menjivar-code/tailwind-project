@@ -1,9 +1,9 @@
 import React from 'react';
 
 /**
- * ============================================================================
+ * 
  * GUÍA DE IMPLEMENTACIÓN: COMPONENTE REUTILIZABLE <Boton />
- * ============================================================================
+ * 
  * - Sección 3 (Opción 1): Define la interfaz BotonProps con las propiedades
  *   básicas (children, onClick, tipo, className).
  * - Sección 6 (Ejercicio 1): Agrega la propiedad opcional `variante` para
@@ -12,8 +12,8 @@ import React from 'react';
  * - Reto Adicional (Tarea 2): Se añade la propiedad opcional `disabled?: boolean`.
  */
 interface BotonProps {
-children: React.ReactNode;
-onClick?: () => void;
+  children: React.ReactNode;
+  onClick?: () => void;
   tipo?: "button" | "submit" | "reset";
   variante?: "primario" | "peligro" | "secundario" | "exito";
   disabled?: boolean;

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Boton from './components/Boton'
 
 interface IndexProps {
@@ -11,7 +11,7 @@ interface IndexProps {
  * ARCHIVO RAÍZ: src/Index.tsx
  * PÁGINA DE INICIO, NAVEGACIÓN CON BOTONES Y SOLUCIÓN A LA GUÍA DE TRABAJO
  * ============================================================================
- * 1. Presenta la pantalla de inicio con acceso directo mediante links de botón
+ * 1. Presenta la pantalla de inicio con acceso directo mediante botones
  *    hacia `App` y hacia los componentes (`Flex`, `Grid`, `Form`).
  * 2. Desarrolla cada sección de la guía de Tailwind CSS:
  *    - Sección 3 (Opción 1): Componente reutilizable <Boton /> y prop className.
@@ -22,10 +22,12 @@ interface IndexProps {
  *      de modo claro / modo oscuro (dark:).
  */
 export function Index({ darkMode = false, onToggleDarkMode }: IndexProps) {
+  const navigate = useNavigate()
+
   return (
     <div className="space-y-8">
       {/* =====================================================================
-          INICIO: NAVEGACIÓN PRINCIPAL MEDIANTE LINKS DE BOTÓN
+          INICIO: NAVEGACIÓN PRINCIPAL MEDIANTE BOTONES
           ===================================================================== */}
       <section className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200 transition-colors dark:bg-slate-800 dark:ring-slate-700">
         <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-sky-700 dark:text-sky-400">
@@ -39,18 +41,18 @@ export function Index({ darkMode = false, onToggleDarkMode }: IndexProps) {
         </p>
 
         <div className="flex flex-wrap gap-4">
-          <Link to="/app">
-            <Boton variante="primario">Ir a App</Boton>
-          </Link>
-          <Link to="/flex">
-            <Boton variante="secundario">Ver Flex</Boton>
-          </Link>
-          <Link to="/grid">
-            <Boton variante="exito">Ver Grid</Boton>
-          </Link>
-          <Link to="/form">
-            <Boton variante="primario">Ver Formulario</Boton>
-          </Link>
+          <Boton variante="primario" onClick={() => navigate('/app')}>
+            Ir a App
+          </Boton>
+          <Boton variante="secundario" onClick={() => navigate('/flex')}>
+            Ver Flex
+          </Boton>
+          <Boton variante="exito" onClick={() => navigate('/grid')}>
+            Ver Grid
+          </Boton>
+          <Boton variante="primario" onClick={() => navigate('/form')}>
+            Ver Formulario
+          </Boton>
         </div>
       </section>
 
@@ -71,7 +73,10 @@ export function Index({ darkMode = false, onToggleDarkMode }: IndexProps) {
           </Boton>
 
           {/* Puedes añadir o sobreescribir clases específicas con className */}
-          <Boton onClick={() => alert('Eliminado')} className="bg-red-600 hover:bg-red-700">
+          <Boton
+            onClick={() => alert('Eliminado')}
+            className="bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600"
+          >
             Eliminar
           </Boton>
         </div>

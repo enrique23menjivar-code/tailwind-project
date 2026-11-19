@@ -55,7 +55,7 @@ export const AppRoutes = () => {
             <Boton
               variante="secundario"
               onClick={toggleDarkMode}
-              className="text-xs md:text-sm py-1.5 px-3"
+              className="text-xs md:text-sm"
             >
               {darkMode ? '☀️ Modo Claro' : '🌙 Modo Oscuro'}
             </Boton>
@@ -69,7 +69,10 @@ export const AppRoutes = () => {
             path="/"
             element={<Index darkMode={darkMode} onToggleDarkMode={toggleDarkMode} />}
           />
-          <Route path="/app" element={<App />} />
+          <Route
+            path="/app"
+            element={<App darkMode={darkMode} onToggleDarkMode={toggleDarkMode} />}
+          />
           <Route path="/flex" element={<Flex />} />
           <Route path="/grid" element={<Grid />} />
           <Route path="/form" element={<Form />} />
