@@ -1,48 +1,32 @@
-# Tailwind Project
+# React + TypeScript + Vite
 
-Proyecto de React + Vite + Tailwind con una landing page que incluye enlaces a las secciones de App, Flex y Grid.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Incluye
+Currently, two official plugins are available:
 
-- vista principal con navegación por secciones
-- componente Flex con diseño centrado
-- componente Grid responsive en 1, 2 y 3 columnas
-- configuración para publicación en GitHub Pages
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Scripts
+## React Compiler
 
-```bash
-npm install
-npm run dev
-npm run build
-npm run deploy
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
-## Publicar en GitHub Pages
-
-1. Crear un repositorio en GitHub.
-2. Conectar el proyecto local:
-
-```bash
-git remote add origin https://github.com/<tu-usuario>/tailwind-project.git
-git branch -M main
-git push -u origin main
-```
-
-3. Publicar la build:
-
-```bash
-npm run deploy
-```
-
-4. En GitHub, ir a Settings > Pages y seleccionar la rama `gh-pages` o la carpeta `root` según el flujo que uses.
-
-## Repositorio local
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-La configuración de Vite está preparada para desplegar con base relativa en GitHub Pages.
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
